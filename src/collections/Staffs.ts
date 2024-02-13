@@ -109,6 +109,11 @@ export const Staffs: CollectionConfig = {
             type: "text",
         },
         {
+            name: "scopusLink",
+            label: "Scopus Link",
+            type: "text",
+        },
+        {
             label: "Publication",
             type: "collapsible",
             fields: [

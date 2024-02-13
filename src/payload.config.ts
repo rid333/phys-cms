@@ -20,6 +20,13 @@ import { Activities } from './collections/Acitivities'
 import { ModuleHandbook } from './globals/ModuleHandbook'
 import { VisiMisi } from './globals/VisiMisi'
 import { UndergraduateProgram } from './globals/UndergraduateProgram'
+import { AcademicSOP } from './collections/AcademicSOP'
+import { MasterProgram } from './globals/MasterProgram'
+import { DoctorProgram } from './globals/DoctorProgram'
+import { VisiMisiMaster } from './globals/VisiMisiMaster'
+import { VisiMisiDoktor } from './globals/VisiMisiDoktor'
+import { Appendix } from './collections/Appendix'
+import { Library } from './globals/Library'
 
 export default buildConfig({
   admin: {
@@ -33,17 +40,24 @@ export default buildConfig({
     Media,
     Staffs,
     News,
-    Activities
+    Activities,
+    AcademicSOP,
+    Appendix,
   ],
   globals: [
     History,
     VisiMisi,
+    VisiMisiMaster,
+    VisiMisiDoktor,
     UndergraduateProgram,
+    MasterProgram,
+    DoctorProgram,
     Teori,
     Elins,
     Material,
     Optik,
-    ModuleHandbook
+    ModuleHandbook,
+    Library
   ],
   upload: {
     limits: {
