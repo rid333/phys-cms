@@ -17,7 +17,6 @@ import { Staffs } from './collections/Staffs'
 import { History } from './globals/History'
 import { News } from './collections/News'
 import { Activities } from './collections/Acitivities'
-import { ModuleHandbook } from './globals/ModuleHandbook'
 import { VisiMisi } from './globals/VisiMisi'
 import { UndergraduateProgram } from './globals/UndergraduateProgram'
 import { AcademicSOP } from './collections/AcademicSOP'
@@ -27,54 +26,62 @@ import { VisiMisiMaster } from './globals/VisiMisiMaster'
 import { VisiMisiDoktor } from './globals/VisiMisiDoktor'
 import { Appendix } from './collections/Appendix'
 import { Library } from './globals/Library'
+import { Survey } from './globals/Survey'
+import { Portfolio } from './collections/Portfolio'
+import { ModuleHandbook } from './collections/ModuleHandbook'
+import { TujuanManfaatS2 } from './globals/TujuanManfaatS2'
+import { ProfilLulusanS2 } from './globals/ProfilLulusanS2'
 
 export default buildConfig({
-  admin: {
-    user: Users.slug,
-    bundler: webpackBundler(),
-  },
-  editor: slateEditor({}),
-  collections: [
-    Users,
-    Carousel,
-    Media,
-    Staffs,
-    News,
-    Activities,
-    AcademicSOP,
-    Appendix,
-  ],
-  globals: [
-    History,
-    VisiMisi,
-    VisiMisiMaster,
-    VisiMisiDoktor,
-    UndergraduateProgram,
-    MasterProgram,
-    DoctorProgram,
-    Teori,
-    Elins,
-    Material,
-    Optik,
-    ModuleHandbook,
-    Library
-  ],
-  upload: {
-    limits: {
-      fileSize: 1000000,
+    admin: {
+        user: Users.slug,
+        bundler: webpackBundler(),
     },
-  },
-  typescript: {
-    outputFile: path.resolve(__dirname, 'payload-types.ts'),
-  },
-  graphQL: {
-    schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
-  },
-  cors: ["http://localhost:5173"],
-  plugins: [payloadCloud()],
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.DATABASE_URI,
+    editor: slateEditor({}),
+    collections: [
+        Users,
+        Carousel,
+        Media,
+        Staffs,
+        ModuleHandbook,
+        Portfolio,
+        News,
+        Activities,
+        AcademicSOP,
+        Appendix,
+    ],
+    globals: [
+        History,
+        VisiMisi,
+        VisiMisiMaster,
+        VisiMisiDoktor,
+        UndergraduateProgram,
+        DoctorProgram,
+        Teori,
+        Elins,
+        Material,
+        Optik,
+        Library,
+        Survey,
+        TujuanManfaatS2,
+        ProfilLulusanS2
+    ],
+    upload: {
+        limits: {
+            fileSize: 1000000,
+        },
     },
-  }),
+    typescript: {
+        outputFile: path.resolve(__dirname, 'payload-types.ts'),
+    },
+    graphQL: {
+        schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
+    },
+    cors: ["http://localhost:5173"],
+    plugins: [payloadCloud()],
+    db: postgresAdapter({
+        pool: {
+            connectionString: process.env.DATABASE_URI,
+        },
+    }),
 })
